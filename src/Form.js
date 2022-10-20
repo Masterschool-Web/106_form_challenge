@@ -4,7 +4,6 @@ import Button from "./Button";
 
 const Form = (props) => {
     const onSubmit = (e) => {
-        e.preventDefault()
         props.onSubmit()
     }
     return (
