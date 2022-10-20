@@ -21,4 +21,3 @@ it("form is submitted", () => {
     fireEvent.submit(getByRole("form"));
     expect(onSubmit).toHaveBeenCalled();
 });
-

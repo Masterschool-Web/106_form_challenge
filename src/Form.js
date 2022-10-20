@@ -1,16 +1,12 @@
-import React, {useState} from 'react';
-
+import React from "react";
+import Input from "./Input";
+import Button from "./Button";
 
 const Form = (props) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [accounts, setAccounts] = useState([{ username: "oleg", password: "111111" },]);
-
     const onSubmit = (e) => {
-        e.preventDefault();
-        props.onSubmit();
+        e.preventDefault()
+        props.onSubmit()
     }
-
     return (
         <form aria-label='form'
             style={{
@@ -22,21 +18,9 @@ const Form = (props) => {
             onSubmit={onSubmit}
         >
             <h3>Login</h3>
-            <input
-                value={username}
-                type="text"
-                onChange={/* MORE OF YOUR CODE HERE */ () => {}}
-                style={{ marginBottom: 5 }}
-            />
-            <input
-                value={password}
-                type="text"
-                onChange={/* MORE OF YOUR CODE HERE */ () => {}}
-                style={{ marginBottom: 10 }}
-            />
-            <button style={{ alignSelf: "center" }} onClick={onSubmit}>
-                Submit
-            </button>
+            <Input value={props.username} onChange={props.onUsernameChange} />
+            <Input value={props.password} onChange={props.onPasswordChange} />
+            <Button value="Submit" style={{ alignSelf: "center" }}/>
         </form>
     );
 }
