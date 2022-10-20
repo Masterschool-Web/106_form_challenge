@@ -1,38 +1,58 @@
-import { useState } from "react";
-
-const TASKS = [
-  {
-    task: "Clean bedroom",
-    subtasks: ["Do laundry", "Organize desk", "Wipe floors"],
-  },
-  {
-    task: "Study",
-    subtasks: ["Review chemistry", "Do a React coding challenge"],
-  },
-  {
-    task: "Build website",
-    subtasks: ["Choose tech stack", "Design pages", "Develop", "Publish"],
-  },
-];
+import React, { useState } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState(TASKS);
-
   return (
       <div
           style={{
             display: "flex",
             justifyContent: "center",
-            marginTop: 30,
+            paddingTop: 20,
           }}
       >
-        <TasksAndSubtasks taskArray={tasks} setTaskArray={setTasks} />
+        <ValidatedForm />
       </div>
   );
 }
 
-const TasksAndSubtasks = ({ taskArray, setTaskArray }) => {
-  // YOUR CODE HERE
+const ValidatedForm = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [accounts, setAccounts] = useState([
+    { username: "oleg", password: "007001" },
+  ]);
+
+  const onSubmit = (e) => {
+    // YOUR CODE HERE
+  };
+
+  return (
+      <form
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            border: "solid",
+            padding: 10,
+          }}
+          onSubmit={onSubmit}
+      >
+        <h3>Login</h3>
+        <input
+            value={username}
+            type="text"
+            onChange={/* MORE OF YOUR CODE HERE */ () => {}}
+            style={{ marginBottom: 5 }}
+        />
+        <input
+            value={password}
+            type="text"
+            onChange={/* MORE OF YOUR CODE HERE */ () => {}}
+            style={{ marginBottom: 10 }}
+        />
+        <button style={{ alignSelf: "center" }} onClick={onSubmit}>
+          Submit
+        </button>
+      </form>
+  );
 };
 
 export default App;
