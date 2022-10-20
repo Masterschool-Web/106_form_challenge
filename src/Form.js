@@ -18,8 +18,8 @@ const Form = (props) => {
             onSubmit={onSubmit}
         >
             <h3>Login</h3>
-            <Input value={props.username} onChange={props.onUsernameChange} />
-            <Input value={props.password} onChange={props.onPasswordChange} />
+            <Input testId='username-field' value={props.username} onChange={props.onUsernameChange} />
+            <Input testId='password-field' value={props.password} onChange={props.onPasswordChange} />
             <Button value="Submit" style={{ alignSelf: "center" }}/>
         </form>
     );
